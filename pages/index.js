@@ -1,17 +1,16 @@
 import Head from 'next/head'
 import CurrentTime from '../components/CurrentTime'
 import RouteSection from '../components/RouteSection'
-import { useGrabData } from '../utils/loadData'
 
 export default function Home () {
-  const dataToLoad = [
-    { routeId: '40_100479', stopId: '1_990004' },
-    { routeId: '40_100479', stopId: '1_990003' },
-    { routeId: '1_100225', stopId: '1_36940' },
-    { routeId: '1_100252', stopId: '1_36940' },
-    { routeId: '1_100252', stopId: '1_16430' },
-    { routeId: '1_100225', stopId: '1_16430' }
-  ]
+  // const dataToLoad = [
+  //   { routeId: '40_100479', stopId: '1_990004' },
+  //   { routeId: '40_100479', stopId: '1_990003' },
+  //   { routeId: '1_100225', stopId: '1_36940' },
+  //   { routeId: '1_100252', stopId: '1_36940' },
+  //   { routeId: '1_100252', stopId: '1_16430' },
+  //   { routeId: '1_100225', stopId: '1_16430' }
+  // ]
 
   return (
     <div>
