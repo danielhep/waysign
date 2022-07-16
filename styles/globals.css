@@ -8,3 +8,7 @@
   src:  url('/LTAIdentity-Medium.woff2') format('woff2'),
         url('/LTAIdentity-Medium.woff') format('woff');
 }
+
+body {
+  overflow: hidden;
+}
