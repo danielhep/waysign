@@ -1,4 +1,3 @@
-import useSWR from 'swr'
 import StopRouteTimes from './StopRouteTimes'
 import RouteCircle from './RouteCircle'
 
