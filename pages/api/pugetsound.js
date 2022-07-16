@@ -1,11 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
+const API_KEY = process.env.NEXT_PUGETSOUND_API_KEY
 export default async function handler (req, res) {
   const { stop_id: stopId } = req.query
   const routeIds = req.query.route_ids?.split(',')
-  const rawData = await fetch(`https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/${stopId}.json?key=TEST`)
+  const rawData = await fetch(
+    `https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/${stopId}.json?key=${API_KEY}`
+  )
   const { data } = await rawData.json()
-  console.log(data)
   const outData = data?.entry?.arrivalsAndDepartures
     .filter(e => routeIds ? routeIds?.includes(e.routeId) : true)
     .map(e => ({
@@ -13,7 +14,8 @@ export default async function handler (req, res) {
       departureTime: e.predicted ? e.predictedDepartureTime : e.scheduledDepartureTime,
       realtime: e.predicted,
       routeId: e.routeId,
-      headsign: e.tripHeadsign
+      headsign: e.tripHeadsign,
+      tripId: e.tripId
     }))
   res.status(200).json(outData)
 }

@@ -8,7 +8,7 @@ export default function RouteCircle ({
     return (
       <div
         style={{ backgroundColor: `${color}` }}
-        className={`rounded-full text-7xl  flex items-center justify-center ${className}`}
+        className={`rounded-full text-7xl aspect-square flex items-center justify-center ${className}`}
       >
         {routeName}
       </div>
@@ -17,7 +17,7 @@ export default function RouteCircle ({
     return (
       <div
         style={{ backgroundColor: `${color}` }}
-        className={`rounded-lg text-7xl  flex items-center justify-center ${className}`}
+        className={`rounded-lg text-7xl aspect-square flex items-center justify-center ${className}`}
       >
         {routeName}
       </div>

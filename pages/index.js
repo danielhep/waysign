@@ -3,14 +3,55 @@ import CurrentTime from '../components/CurrentTime'
 import RouteSection from '../components/RouteSection'
 
 export default function Home () {
-  // const dataToLoad = [
-  //   { routeId: '40_100479', stopId: '1_990004' },
-  //   { routeId: '40_100479', stopId: '1_990003' },
-  //   { routeId: '1_100225', stopId: '1_36940' },
-  //   { routeId: '1_100252', stopId: '1_36940' },
-  //   { routeId: '1_100252', stopId: '1_16430' },
-  //   { routeId: '1_100225', stopId: '1_16430' }
-  // ]
+  const dataToLoad = [
+    { routeId: '40_100479', stopId: '1_990004' },
+    { routeId: '40_100479', stopId: '1_990003' },
+    { routeId: '1_100225', stopId: '1_36940' },
+    { routeId: '1_100252', stopId: '1_36940' },
+    { routeId: '1_100252', stopId: '1_16430' },
+    { routeId: '1_100225', stopId: '1_16430' }
+  ]
+
+  const configuration = [
+    {
+      routeName: '1',
+      color: '#1FBB00',
+      small: true,
+      type: 'circle',
+      rows: [
+        { routeId: '40_100479', stopId: '1_990004' }
+      ]
+    },
+    {
+      routeName: '1',
+      color: '#1FBB00',
+      small: true,
+      type: 'circle',
+      rows: [
+        { routeId: '40_100479', stopId: '1_990003' }
+      ]
+    },
+    {
+      routeName: '45',
+      color: '#0345fc',
+      small: true,
+      type: 'square',
+      rows: [
+        { routeId: '1_100225', stopId: '1_36940' },
+        { routeId: '1_100225', stopId: '1_16430' }
+      ]
+    },
+    {
+      routeName: '62',
+      color: '#0345fc',
+      small: true,
+      type: 'square',
+      rows: [
+        { routeId: '1_100252', stopId: '1_36940' },
+        { routeId: '1_100252', stopId: '1_16430' }
+      ]
+    }
+  ]
 
   return (
     <div>
@@ -26,10 +67,19 @@ export default function Home () {
           <CurrentTime />
         </section>
         <section className='grid grid-cols-2 gap-y-4 p-4 justify-items-stretch w-full'>
-          <RouteSection routeName={1} color='#1FBB00' />
+          {configuration.map((conf, i) => (
+            <RouteSection
+              routeName={conf.routeName}
+              color={conf.color}
+              rows={conf.rows}
+              type={conf.type}
+              key={i}
+            />
+          ))}
+          {/* <RouteSection routeName={1} color='#1FBB00' />
           <RouteSection routeName={1} color='#1FBB00' />
           <RouteSection routeName={62} type='square' color='#2519ff' />
-          <RouteSection routeName={45} type='square' color='#2519ff' />
+          <RouteSection routeName={45} type='square' color='#2519ff' /> */}
         </section>
       </main>
     </div>
