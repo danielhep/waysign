@@ -1,0 +1,36 @@
+title: Roosevelt Station
+headerRight: datetime
+columns:
+  - background: '#1F1129'
+    rows:
+      - type: singleRoute
+        iconType: circle
+        iconColor: "#00C62B"
+        routeName: "1"
+        title: Southbound
+        routeId: "40_100479"
+        stopId: "1_990004"
+      - type: singleRoute
+        iconType: circle
+        iconColor: "#00C62B"
+        routeName: "1"
+        title: Northbound
+        routeId: "40_100479"
+        stopId: "1_990003"
+  - background: '#0000000'
+    rows:
+      - type: singleStop
+        title: Bay 2
+        routeFilter: 
+          - "1_100225"
+          - "1_100252"
+        stopId: "1_36940"
+      - type: singleStop
+        title: Bay 3
+        routeFilter: 
+          - "1_100225"
+          - "1_100252"
+        stopId: "1_16430"
+routeColors:
+  - "1_100225": "#0054F8"
+  - "1_100252": "#0054F8"
