@@ -20,7 +20,7 @@ function MyApp ({ Component, pageProps }) {
     if (prevBuildId && buildId && prevBuildId !== buildId) {
       router.reload()
     }
-  }, [buildId, prevBuildId])
+  }, [buildId, prevBuildId, router])
   return <Component {...pageProps} />
 }
 
