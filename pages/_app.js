@@ -1,4 +1,4 @@
-import { Router } from 'next/router'
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { usePrevious } from 'react-use'
 import useSWR from 'swr'
@@ -12,12 +12,13 @@ const useBuildId = () => {
 }
 
 function MyApp ({ Component, pageProps }) {
+  const router = useRouter()
   // this goes in /pages/_app.tsx
   const buildId = useBuildId() // useSWR under the hood
   const prevBuildId = usePrevious(buildId)
   useEffect(() => {
     if (prevBuildId && buildId && prevBuildId !== buildId) {
-      Router.reload()
+      router.reload()
     }
   }, [buildId, prevBuildId])
   return <Component {...pageProps} />
