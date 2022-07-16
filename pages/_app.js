@@ -7,7 +7,7 @@ import '../styles/globals.css'
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const useBuildId = () => {
-  const { data } = useSWR('/api/build-id', fetcher)
+  const { data } = useSWR('/api/build-id', fetcher, { refreshInterval: 10000 })
   return data?.buildId
 }
 
