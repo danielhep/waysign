@@ -39,7 +39,7 @@ export default function SingleRoute ({ config }) {
                     i < 3 && (!hideFirst || i !== 0) && (
                       <CSSTransition
                         timeout={500}
-                        classNames='fade'
+                        classNames='slide-left'
                         key={d.tripId}
                       >
                         <ArrivalTime realTime={d.realtime} time={minutesUntil(d.departureTime)} small />

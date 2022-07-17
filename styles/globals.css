@@ -14,26 +14,26 @@
   }
 }
 
-
-/* .fade-enter {
-  max-widt: 0;
-  opacity: 0;
-}
-
-.fade-enter-active {
-  max-width: 30px;
-  opacity: 1;
-  transition: all 500ms;
-} */
-
-.fade-exit {
+.slide-left-exit {
   max-width: 300px;
   opacity: 1;
 }
 
-.fade-exit-active {
+.slide-left-exit-active {
   max-width: 0;
   opacity: 0;
   transform: translateX(-20%);
+  transition: all 500ms;
+}
+
+.slide-up-exit {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.slide-up-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(20%);
   transition: all 500ms;
 }
