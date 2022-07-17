@@ -3,6 +3,7 @@ import RouteCircle from '../RouteCircle'
 import ArrivalTime from '../ArrivalTime'
 import { minutesUntil, useStopTimes } from '../utils/api'
 import React from 'react'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 export default function SingleRoute ({ config }) {
   const {
@@ -31,11 +32,19 @@ export default function SingleRoute ({ config }) {
               <RouteCircle routeName={r.route} color={r.routeColor} type='square' />
               <div className='flex flex-col gap-y-2'>
                 <h3 className='text-4xl'>{r.routeHeader}</h3>
-                <div className='flex gap-x-8'>
+                <TransitionGroup className='flex gap-x-8'>
                   {r.data?.map((d, i) => (
-                    i < 3 && <ArrivalTime key={d.tripId} realTime={d.realtime} time={minutesUntil(d.departureTime)} small />
+                    i < 3 && (
+                      <CSSTransition
+                        timeout={500}
+                        classNames='fade'
+                        key={d.tripId}
+                      >
+                        <ArrivalTime realTime={d.realtime} time={minutesUntil(d.departureTime)} small />
+                      </CSSTransition>
+                    )
                   ))}
-                </div>
+                </TransitionGroup>
               </div>
             </div>
           </React.Fragment>

@@ -9,7 +9,7 @@ const RealTimeIcon = styled(Rss)`
 
 export default function ArrivalTime ({ realTime, time, small, showMin }) {
   return (
-    <p className={classNames(small ? 'text-4xl' : 'text-7xl', 'whitespace-nowrap')}>
+    <p className={classNames(small ? 'text-4xl' : 'text-7xl', 'whitespace-nowrap arrivaltime')}>
       <span className='relative'>
         {time}
         <span className='absolute top-[-4px]'>{realTime && <RealTimeIcon size={20} />}</span>
