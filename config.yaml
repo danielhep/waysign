@@ -63,3 +63,11 @@ columns:
             routeHeader: "Northgate"
             routeColor: "#0054F8"
         stopId: "1_23561"
+      - type: singleStop
+        title: Bay 5
+        stopId: "1_16440"
+        routes:
+          - route: "67"
+            routeId: "1_100259"
+            routeColor: "#0054F8"
+            routeHeader: "U District"
