@@ -32,8 +32,8 @@ export default function SingleRoute ({ config }) {
               <div className='flex flex-col gap-y-2'>
                 <h3 className='text-4xl'>{r.routeHeader}</h3>
                 <div className='flex gap-x-8'>
-                  {r.data?.map(d => (
-                    <ArrivalTime key={d.tripId} realTime={d.realtime} time={minutesUntil(d.departureTime)} small />
+                  {r.data?.map((d, i) => (
+                    i < 3 && <ArrivalTime key={d.tripId} realTime={d.realtime} time={minutesUntil(d.departureTime)} small />
                   ))}
                 </div>
               </div>
