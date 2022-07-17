@@ -19,7 +19,7 @@ export default function SingleRoute ({ config }) {
       <div className='flex flex-col gap-y-2 flex-grow'>
         <h1 className='text-4xl ml-4'>{title}</h1>
         <TransitionGroup className='flex flex-col gap-y-2'>
-          {data?.map(res => (
+          {data?.map((res, i) => (i < 4 &&
             <CSSTransition
               timeout={500}
               classNames='slide-up'
