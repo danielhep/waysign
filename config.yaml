@@ -21,16 +21,25 @@ columns:
     rows:
       - type: singleStop
         title: Bay 2
-        routeFilter: 
-          - "1_100225"
-          - "1_100252"
+        routes:
+          - route: "62"
+            routeId: "1_100252"
+            routeColor: "#0054F8"
+            routeHeader: "Downtown"
+          - route: "45"
+            routeId: "1_100225"
+            routeHeader: "Loyal Heights"
+            routeColor: "#0054F8"
         stopId: "1_36940"
       - type: singleStop
         title: Bay 3
-        routeFilter: 
-          - "1_100225"
-          - "1_100252"
+        routes:
+          - route: "62"
+            routeId: "1_100252"
+            routeColor: "#0054F8"
+            routeHeader: "Sand Point"
+          - route: "45"
+            routeId: "1_100225"
+            routeHeader: "U District"
+            routeColor: "#0054F8"
         stopId: "1_16430"
-routeColors:
-  - "1_100225": "#0054F8"
-  - "1_100252": "#0054F8"

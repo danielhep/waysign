@@ -2,6 +2,8 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { usePrevious } from 'react-use'
 import useSWR from 'swr'
+import RootConfigContext from '../lib/RootConfigContext'
+import config from '../config.yaml'
 import '../styles/globals.css'
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
@@ -13,15 +15,18 @@ const useBuildId = () => {
 
 function MyApp ({ Component, pageProps }) {
   const router = useRouter()
-  // this goes in /pages/_app.tsx
-  const buildId = useBuildId() // useSWR under the hood
+  const buildId = useBuildId()
   const prevBuildId = usePrevious(buildId)
   useEffect(() => {
     if (prevBuildId && buildId && prevBuildId !== buildId) {
       router.reload()
     }
   }, [buildId, prevBuildId, router])
-  return <Component {...pageProps} />
+  return (
+    <RootConfigContext.Provider value={config}>
+      <Component {...pageProps} />
+    </RootConfigContext.Provider>
+  )
 }
 
 export default MyApp
