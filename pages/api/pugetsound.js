@@ -4,7 +4,7 @@ export default async function handler (req, res) {
   const { stop_id: stopId } = req.query
   const routeIds = req.query.route_ids?.split(',')
   const rawData = await fetch(
-    `https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/${stopId}.json?key=${API_KEY}`
+    `https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/${stopId}.json?key=${API_KEY}&minutesBefore=1&minutesAfter=60`
   )
   const { data } = await rawData.json()
   const outData = data?.entry?.arrivalsAndDepartures
