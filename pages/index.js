@@ -11,12 +11,12 @@ export default function Home () {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='bg-black h-screen w-screen text-white'>
-        <section className='w-full h-24 bg-blue-900 flex text-7xl justify-between items-center px-6'>
+      <main className='bg-black md:h-screen md:w-screen text-white'>
+        <section className='w-full md:h-24 bg-blue-900 flex md:text-7xl text-xl justify-between items-center px-6'>
           <div>{config.title}</div>
           <CurrentTime />
         </section>
-        <section className='grid grid-cols-3 h-full w-full justify-items-stretch'>
+        <section className='md:grid md:grid-cols-3 h-full w-full justify-items-stretch'>
           {config.columns.map((col, i) => (<Column key={i} col={col} />))}
         </section>
       </main>
