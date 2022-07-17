@@ -34,7 +34,7 @@ export default function SingleRoute ({ config }) {
               <RouteCircle routeName={r.route} color={r.routeColor} type='square' />
               <div className='flex flex-col gap-y-2'>
                 <h3 className='text-4xl'>{r.routeHeader}</h3>
-                <TransitionGroup className='flex gap-x-8'>
+                <TransitionGroup className='flex'>
                   {r.data?.map((d, i) => (
                     i < 3 && (!hideFirst || i !== 0) && (
                       <CSSTransition
