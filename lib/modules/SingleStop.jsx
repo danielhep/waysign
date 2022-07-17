@@ -14,7 +14,9 @@ export default function SingleRoute ({ config }) {
   const data = useStopTimes(stopId, routeIds)
   const routeData = routes.map(route => ({
     ...route,
-    data: data?.filter(d => d.routeId === route.routeId)
+    data: data
+      ?.filter(d => d.routeId === route.routeId)
+      .filter(d => route.headsignFilter ? d.headsign === route.headsignFilter : true)
   }))
   // Store routes in state so they are in case one route disappears from real time tracking.
   return (

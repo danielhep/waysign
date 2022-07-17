@@ -20,6 +20,18 @@ columns:
   - background: '#0000000'
     rows:
       - type: singleStop
+        title: Bay 1
+        routes:
+          - route: "62"
+            routeId: "1_100252"
+            routeColor: "#0054F8"
+            routeHeader: "Sand Point"
+          - route: "45"
+            routeId: "1_100225"
+            routeHeader: "U District"
+            routeColor: "#0054F8"
+        stopId: "1_16430"
+      - type: singleStop
         title: Bay 2
         routes:
           - route: "62"
@@ -31,15 +43,23 @@ columns:
             routeHeader: "Loyal Heights"
             routeColor: "#0054F8"
         stopId: "1_36940"
+  - background: '#0000000'
+    rows:
       - type: singleStop
         title: Bay 3
         routes:
-          - route: "62"
-            routeId: "1_100252"
+          - route: "522"
+            routeId: "40_100232"
+            routeColor: "#00ADF8"
+            routeHeader: "Bothell"
+            headsignFilter: "Bothell"
+          - route: "522"
+            routeId: "40_100232"
+            routeHeader: "Woodinville"
+            routeColor: "#00ADF8"
+            headsignFilter: "Woodinville"
+          - route: "67"
+            routeId: "1_100259"
+            routeHeader: "Northgate"
             routeColor: "#0054F8"
-            routeHeader: "Sand Point"
-          - route: "45"
-            routeId: "1_100225"
-            routeHeader: "U District"
-            routeColor: "#0054F8"
-        stopId: "1_16430"
+        stopId: "1_23561"

@@ -16,7 +16,7 @@ export default function RouteCircle ({
   } else if (type === 'square') {
     return (
       <div
-        style={{ backgroundColor: `${color}`, boxShadow: 'inset 0 -3x 0 rgba(255, 255, 255, .4)' }}
+        style={{ backgroundColor: `${color}`, boxShadow: 'inset 0 -3px 0 rgba(255, 255, 255, .4)' }}
         className={`rounded-lg p-2 text-6xl aspect-square flex items-center justify-center ${className}`}
       >
         {routeName}
