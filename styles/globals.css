@@ -15,24 +15,24 @@
 }
 
 
-.fade-enter {
-  max-height: 0;
+/* .fade-enter {
+  max-widt: 0;
   opacity: 0;
 }
 
 .fade-enter-active {
-  max-height: 30px;
+  max-width: 30px;
   opacity: 1;
   transition: all 500ms;
-}
+} */
 
 .fade-exit {
-  max-height: 30px;
+  max-width: 300px;
   opacity: 1;
 }
 
 .fade-exit-active {
-  max-height: 0;
+  max-width: 0;
   opacity: 0;
   transition: all 500ms;
 }

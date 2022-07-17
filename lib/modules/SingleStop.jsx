@@ -4,6 +4,7 @@ import ArrivalTime from '../ArrivalTime'
 import { minutesUntil, useStopTimes } from '../utils/api'
 import React from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { useToggle } from 'react-use'
 
 export default function SingleRoute ({ config }) {
   const {
@@ -13,6 +14,7 @@ export default function SingleRoute ({ config }) {
   } = config
   const routeIds = routes.map(route => route.routeId)
   const data = useStopTimes(stopId, routeIds)
+  const [hideFirst, toggleHidefirst] = useToggle(false)
   const routeData = routes.map(route => ({
     ...route,
     data: data
@@ -23,7 +25,7 @@ export default function SingleRoute ({ config }) {
   return (
     <div className='flex flex-col gap-y-2'>
       <div className='border-b pb-1'>
-        <h3 className='text-3xl'>{title}</h3>
+        <h3 className='text-3xl' onClick={toggleHidefirst}>{title}</h3>
       </div>
       {
         routeData.map(r => (
@@ -34,7 +36,7 @@ export default function SingleRoute ({ config }) {
                 <h3 className='text-4xl'>{r.routeHeader}</h3>
                 <TransitionGroup className='flex gap-x-8'>
                   {r.data?.map((d, i) => (
-                    i < 3 && (
+                    i < 3 && (!hideFirst || i !== 0) && (
                       <CSSTransition
                         timeout={500}
                         classNames='fade'
