@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['IdentityFont']
+        sans: ['IdentityFont', 'sans-serif'],
+        sansAlt: ['Atkinson Hyperlegible', 'sans-serif'],
+        sansAlt2: ['Fira Sans', 'sans-serif']
       }
     }
   },
