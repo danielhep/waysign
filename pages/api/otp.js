@@ -43,6 +43,12 @@ const config = {
               stopId: "kcm:36940",
               halfWidth: true,
             },
+            {
+              type: "basic",
+              routeId: "kcm:100252",
+              stopId: "kcm:16430",
+              halfWidth: true,
+            },
           ],
         },
         {
@@ -53,6 +59,12 @@ const config = {
               stopId: "kcm:36940",
               halfWidth: true,
             },
+            {
+              type: "basic",
+              routeId: "kcm:100225",
+              stopId: "kcm:16430",
+              halfWidth: true,
+            }
           ],
         },
       ],
