@@ -101,5 +101,5 @@ export default async function handler(req, res) {
     }))
   );
   // const results = await request(endpoint, query, { stopId });
-  res.status(200).json(outputData);
+  res.status(200).json({ pages: outputData });
 }
