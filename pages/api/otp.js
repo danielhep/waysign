@@ -73,6 +73,7 @@ const config = {
             {
               type: "basic",
               routeId: "40:100479",
+              shortNameOverride: "1",
               stopId: "40:990003",
               halfWidth: true,
               background_color: 0x001100,
@@ -80,6 +81,7 @@ const config = {
             {
               type: "basic",
               routeId: "40:100479",
+              shortNameOverride: "1",
               stopId: "40:990004",
               halfWidth: true,
               background_color: 0x001100,
@@ -91,14 +93,14 @@ const config = {
   ],
 };
 
-const transformResponse = (response, routeId) => {
+const transformResponse = (response, { routeId, shortNameOverride }) => {
   const stopTimes = response.stop.stoptimesWithoutPatterns;
   const filteredStopTimes = stopTimes.filter(
     (st) => st.trip.route.gtfsId === routeId
   );
   const transformedStopTimes = filteredStopTimes.map((st) => ({
     realtime: st.realtime,
-    routeShortName: st.trip.routeShortName,
+    routeShortName: shortNameOverride || st.trip.routeShortName,
     directionId: st.trip.directionId,
     mins: differenceInMinutes(
       fromUnixTime(st.realtimeDeparture + st.serviceDay),
@@ -117,7 +119,7 @@ const processRows = async (row) => ({
       });
       return {
         ...col,
-        data: transformResponse(dataForRow, col.routeId),
+        data: transformResponse(dataForRow, col),
       };
     })
   ),
