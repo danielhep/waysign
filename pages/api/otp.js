@@ -64,7 +64,26 @@ const config = {
               routeId: "kcm:100225",
               stopId: "kcm:16430",
               halfWidth: true,
-            }
+            },
+          ],
+        },
+        { cols: [] },
+        {
+          cols: [
+            {
+              type: "basic",
+              routeId: "40:100479",
+              stopId: "40:990003",
+              halfWidth: true,
+              background_color: 0x001100,
+            },
+            {
+              type: "basic",
+              routeId: "40:100479",
+              stopId: "40:990004",
+              halfWidth: true,
+              background_color: 0x001100,
+            },
           ],
         },
       ],
